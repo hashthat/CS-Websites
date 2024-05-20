@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event-Driven Example</title>
+    <title>DisplayAI_Image</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            padding: 10px;
         }
         #output {
             margin-top: 20px;
-            font-size: 20px;
+            font-size: 15px;
         }
         .button {
             padding: 10px 20px;
@@ -26,14 +26,34 @@
         .button:hover {
             background-color: #0056b3;
         }
+        .image-container {
+            width: 100%;
+            height: 70vh;
+            background-image: url('https://raw.githubusercontent.com/hashthat/hashthat.github.io/main/ai_image.jpeg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
     </style>
 </head>
 <body>
-    <h1>Event-Driven Example</h1>
-    <p style="background-image: url(ai_image.jpeg);">
+	
+    
+    
     <button id="changeColorButton" class="button">Change Text Color</button>
     <button id="changeFontButton" class="button">Change Text Font</button>
-    <div id="output">This text will change color and font when you click the buttons.</div>
+    <div id="output"><h1>_AI__MY____AI</h1><br>
+    
+    this is my original page that includes a little bit of CSS and HTML to creatively introduce myself!<br>
+    I'm currently a UAT student, and in my first week of classes!<br>
+    for my first assginment I developed this little window to show off an AI image I created through a neural network because I wanted to find a way to utilize generative AI to produce a neural network image from scratch.<br>
+    But, also from our first week in the Class I created an event driven example which is a computer science term for creating tools with code that are interactive and useful for someone using the app in hand<br>
+    My basic example is utilizing buttons in HTML to change the text and font to whatever looks and reads the best for the person visiting my site!<br>
+    in this case it is who ever has the sharable link!<br>
+    I'm excited to do more generative art and discover AI as I persue my degree!<br>
+    thanks for reading!</div>
+	<div class="image-container"></div>
+
 
     <script>
         // Wait for the DOM content to be fully loaded
@@ -43,9 +63,9 @@
             const fontButton = document.getElementById('changeFontButton');
             const output = document.getElementById('output');
 
-            // Function to change the text color
+            // this function changes the text color
             function changeTextColor() {
-                // Generate a random color
+                // https://www.tutorialspoint.com/generating-random-hex-color-in-javascript
                 const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
                 // Set the text color of the output div
                 output.style.color = randomColor;
@@ -54,7 +74,7 @@
             // Function to change the text font
             function changeTextFont() {
                 // Array of font families
-                const fonts = ['Arial', 'Verdana', 'Courier New', 'Georgia', 'Times New Roman', 'Trebuchet MS', 'Comic Sans MS'];
+                const fonts = ['Palatino Linotype', 'Comic Sans MS', 'Book Antiqua', 'Arial', 'Verdana', 'Courier New', 'Georgia', 'Times New Roman', 'Trebuchet MS', 'Comic Sans MS'];
                 // Select a random font from the array
                 const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
                 // Set the font family of the output div
@@ -65,7 +85,7 @@
             colorButton.addEventListener('click', changeTextColor);
             fontButton.addEventListener('click', changeTextFont);
         });
+         
     </script>
 </body>
 </html>
-
