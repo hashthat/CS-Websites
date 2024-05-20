@@ -1,0 +1,47 @@
+body {
+    
+	background-image: url('https://raw.githubusercontent.com/hashthat/UAT_CS-AI/main/Materials/screenshots/Designer(1).jpeg'); /* image URL */
+    background-size: cover;
+	background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #008B8B; /* Fallback color */
+    color: #555; /* Text color */
+
+}
+nav {
+    height: 6000px;
+    width: 200px;
+    float: left;
+    padding: 5px;
+    line-height: 30px;
+}
+
+footer {
+    text-align: center;
+    margin-right: 200px;
+}
+
+#memeImage {
+    margin-right: 200px;
+}
+
+header {
+    text-align: center;
+}
+
+/* https://css-tricks.com/methods-contrasting-text-backgrounds/ */
+
+h1 {
+  background: inherit;
+  background-clip: text;
+  color: transparent;
+  filter: invert(1);
+}
+p {
+  background: inherit;
+  background-clip: text;
+  color: indigo;
+  filter: invert(1);
+}

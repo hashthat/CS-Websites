@@ -3,89 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DisplayAI_Image</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 10px;
-        }
-        #output {
-            margin-top: 20px;
-            font-size: 15px;
-        }
-        .button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-        .image-container {
-            width: 100%;
-            height: 70vh;
-            background-image: url('https://raw.githubusercontent.com/hashthat/hashthat.github.io/main/ai_image.jpeg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    </style>
+    <title>AI_Image</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 	
     
-    
-    <button id="changeColorButton" class="button">Change Text Color</button>
-    <button id="changeFontButton" class="button">Change Text Font</button>
-    <div id="output"><h1>_AI__MY____AI</h1><br>
-    
-    this is my original page that includes a little bit of CSS and HTML to creatively introduce myself!<br>
+    <h1>_AI__MY____AI</h1>
+
+     <p> This is my original page that includes a little bit of CSS and HTML to creatively introduce myself!<br>
     I'm currently a UAT student, and in my first week of classes!<br>
-    for my first assginment I developed this little window to show off an AI image I created through a neural network because I wanted to find a way to utilize generative AI to produce a neural network image from scratch.<br>
-    But, also from our first week in the Class I created an event driven example which is a computer science term for creating tools with code that are interactive and useful for someone using the app in hand<br>
-    My basic example is utilizing buttons in HTML to change the text and font to whatever looks and reads the best for the person visiting my site!<br>
-    in this case it is who ever has the sharable link!<br>
-    I'm excited to do more generative art and discover AI as I persue my degree!<br>
-    thanks for reading!</div>
-	<div class="image-container"></div>
+    for my first assginment I developed this little window to show off an AI image I created through a neural network that I found through google.<br> I wanted to find a way to utilize generative AI to produce an image on a trained model that has been used by the public to see what would happen if I focused on the thought of a neural network.<br> The image below is my favorite out of all the other images I found and created which are in the repository at https://github.com/hashthat/UAT_CS-AI/tree/main/CSC102/AI_Images<br>
+    I'm excited to do more generative art and discover AI as I persue my degree!<br> Given my interests in low level aspects of OS_Development and uses of the terminal<br> I have chosen to persue a degree in AI and Cyber Security, I love Devops and the Terminal.<br>
+    I am currently working with MultiPass which is a tool used with Ubuntu for web development.<br> It is terminally based and I can manage multiple webpages using Docker!<br> I still have a lot to learn and this is only my second time using the VM technology<br> But the interesting thing is it is always running in the background and I can use the IP address or Multiple IP addresses for assignments as the development of my projects and classes proceed!<br>
 
-
-    <script>
-        // Wait for the DOM content to be fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get references to the buttons and output div
-            const colorButton = document.getElementById('changeColorButton');
-            const fontButton = document.getElementById('changeFontButton');
-            const output = document.getElementById('output');
-
-            // this function changes the text color
-            function changeTextColor() {
-                // https://www.tutorialspoint.com/generating-random-hex-color-in-javascript
-                const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-                // Set the text color of the output div
-                output.style.color = randomColor;
-            }
-
-            // Function to change the text font
-            function changeTextFont() {
-                // Array of font families
-                const fonts = ['Palatino Linotype', 'Comic Sans MS', 'Book Antiqua', 'Arial', 'Verdana', 'Courier New', 'Georgia', 'Times New Roman', 'Trebuchet MS', 'Comic Sans MS'];
-                // Select a random font from the array
-                const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-                // Set the font family of the output div
-                output.style.fontFamily = randomFont;
-            }
-
-            // Add event listeners to the buttons
-            colorButton.addEventListener('click', changeTextColor);
-            fontButton.addEventListener('click', changeTextFont);
-        });
-         
-    </script>
+    thanks for reading!</p>
 </body>
 </html>
