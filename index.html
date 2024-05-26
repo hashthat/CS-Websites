@@ -5,6 +5,8 @@ This is a project that uses inline CSS And JavaScript.
 here is a link for some inline javascript! https://www.geeksforgeeks.org/how-does-inline-javascript-work-with-html/
 
 I used some of my AI-Generated images for the background
+
+The fun part about writing notes in an inline HTML file is seeing the chnage in how the file is read from HTML, to CSS in the Style bracket to JavaScript in the Script bracket. anyone following will see me say this again as I write out the comments.
 -->
 
 <!DOCTYPE html>
@@ -27,15 +29,15 @@ I used some of my AI-Generated images for the background
             margin: 0;
             color: #333;
         }
-        /* Style the main container */
+        /* Stylish main container */
         .container {
             text-align: center;
-            background-color: #ffffff;
+            background-color: indigo;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        /* Style the prompt button */
+        /* Stylish prompt button */
         .prompt-button {
             padding: 10px 20px;
             font-size: 18px;
@@ -56,7 +58,7 @@ I used some of my AI-Generated images for the background
             margin-top: 20px;
             font-size: 18px;
         }
-        /* This is the Background Image. I wanted this to be transparent to a degree, but I didn't want it to be too overwhelming. I wish I had written down the sentance I used for the image. But the focus at the time was creating images that were focused on the idea of a Neural Network and what a Neural Network can Create. The Body simply positions the image, gives content, and I placed the width and height to 100% to fill the screen given the background image is the result of what is seen for the user. The position is Centered with nothing to repeat as the single image makes the scene! */
+        /* This is the Background Image. And the comments are like that of CSS! I wanted this to be transparent to a degree, but I didn't want it to be too overwhelming. I wish I had written down the sentance I used for the image. But the focus at the time was creating images that were focused on the idea of a Neural Network and what a Neural Network can Create. The Body simply positions the image, gives content, and I placed the width and height to 100% to fill the screen given the background image is the result of what is seen for the user. The position is Centered with nothing to repeat as the single image makes the scene! */
         body::before {
             content: '';
             position: fixed;
@@ -82,6 +84,8 @@ I used some of my AI-Generated images for the background
     </div>
 
     <script>
+	    // The fun part about note taking with inline javascript is the comments are in the syntax of what someone would use as they scripted in JavaScript!
+
         // This function will go through the hoops to see if this is a palindrome. The inline aspect of using JavaScript in HTML is effectively adding functions to the script section of the webpage!
         function checkPalindrome() {
             // Loop to continue asking until the user says to stop. This way there can be multiple inputs!
@@ -96,12 +100,12 @@ I used some of my AI-Generated images for the background
                 // the reversed input checks to see if the input is a palindrome. Technically that is just checking if the array matches from the center out. So, this is where the string turns into an array
                 let reversedInput = cleanedInput.split('').reverse().join('');
                 
-                // Check if the cleaned string is the same forwards and backwards
+                // is this a Palindrome?!
                 let isPalindrome = cleanedInput === reversedInput;
                 // Notify the user if the string is a palindrome or not
                 let message = `"${userInput}" is ${isPalindrome ? '' : 'not '}a palindrome.`;
                 
-                // Display the result in the results div
+                // Results
                 let resultsDiv = document.getElementById('results');
                 let resultParagraph = document.createElement('p');
                 resultParagraph.textContent = message;
