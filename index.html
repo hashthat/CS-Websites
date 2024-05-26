@@ -93,7 +93,7 @@ I used some of my AI-Generated images for the background
                 
                 // The process can start with either the toLowerCase or toUpperCase function.
                 let cleanedInput = userInput.replace(/\s+/g, '').toLowerCase();
-                
+                // the reversed input checks to see if the input is a palindrome. Technically that is just checking if the array matches from the center out. So, this is where the string turns into an array
                 let reversedInput = cleanedInput.split('').reverse().join('');
                 
                 // Check if the cleaned string is the same forwards and backwards
@@ -111,4 +111,7 @@ I used some of my AI-Generated images for the background
     </script>
 </body>
 </html>
-
+<!-- This is a Review of the looping process of what creates a palindrome checker!
+	========================================================================
+	There are a few key functions to develop a palindrome checker. Before checking for the palendrome in a word or string of characters (the input of the user) There has to be a way to identify whether or not the characters match and the word is spelled the same forwards and backwards before it is split into an array and checked. So, there's the old C like function that changes a string to all upper or lowercase characters. That's where the madness can start. Making all the characters toupper or tolower case and then checking the values to the array or string. The first being the idea of a butterfly effect. That is with the use of a split() function which splits the string entered or the input string gets transferred into an array of characters that can be used with the reverse() function to see if the palendrom is read forwards or backwards. The other function does the reverse of what was done with the split() function. The join() function reconnects the array of characters and the input is converted back to a string of characters which is then returned as the output of the process.
+-->
