@@ -2,11 +2,7 @@
 Samuel Alberts with UAT
 
 This is a project that uses inline CSS And JavaScript.
-here is a link for some inline javascript! https://www.geeksforgeeks.org/how-does-inline-javascript-work-with-html/
 
-I used some of my AI-Generated images for the background
-
-The fun part about writing notes in an inline HTML file is seeing the chnage in how the file is read from HTML, to CSS in the Style bracket to JavaScript in the Script bracket. anyone following will see me say this again as I write out the comments.
 -->
 
 <!DOCTYPE html>
@@ -14,12 +10,12 @@ The fun part about writing notes in an inline HTML file is seeing the chnage in 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palindrome Checker</title>
+    <title>Secret Message</title>
     <!-- Import Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Apply basic styling to the body */
-        body {
+      /* Focusing on the body of the website, or stylizing the main visible section of the website. */
+         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f0f8ff;
             display: flex;
@@ -29,15 +25,31 @@ The fun part about writing notes in an inline HTML file is seeing the chnage in 
             margin: 0;
             color: #333;
         }
-        /* Stylish main container */
+        /* Stylish container */
         .container {
             text-align: center;
-            background-color: white;
+            background-color:transparent;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        /* Stylish prompt button */
+      .heading-background {
+        background-color: #17A2B8;
+        opacity: 0.6;
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+      }
+        /* The input fields are going to stay the same as to give a more balanced and professional feel to the website. The main things are the input text, padding, the font size, margins boarders and etc. This will represent the boxes where the user actually types their first and last name into the box along with their zip code. Utilizing this section or utilizing a section of input allows JavaScript to read the input and the function allows the input to be concatinated which is going to be the end goal of the assignment, concatenating two strings and being sure the two strings do not exceed 20 characters in the process of being read. */
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            width: calc(100% - 20px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* buttons and input space are kind of the same because of the feel of the website and the balance which includes the size and positioning of the buttons and spaces for the user to read or input information. */
         .prompt-button {
             padding: 10px 20px;
             font-size: 18px;
@@ -49,16 +61,25 @@ The fun part about writing notes in an inline HTML file is seeing the chnage in 
             margin-top: 20px;
             transition: background-color 0.3s;
         }
-        /* Change button color on hover */
+        /* Change button color when cursor hovers past or over before clicking or submitting their information. It's good because the user knows that the button is interactable and ready to use when the form is ready to be submitted.
+      */
         .prompt-button:hover {
             background-color: #0056b3;
         }
-        /* PALINDROME CHECKER! */
+        /* This is the basic information or feedback after the loop is exicuted and the submission is made. And this is where the secret message is expressed as part of the results of the function */
         .results {
             margin-top: 20px;
             font-size: 18px;
         }
-        /* This is the Background Image. And the comments are like that of CSS! I wanted this to be transparent to a degree, but I didn't want it to be too overwhelming. I wish I had written down the sentance I used for the image. But the focus at the time was creating images that were focused on the idea of a Neural Network and what a Neural Network can Create. The Body simply positions the image, gives content, and I placed the width and height to 100% to fill the screen given the background image is the result of what is seen for the user. The position is Centered with nothing to repeat as the single image makes the scene! */
+        /*   
+The background was one of four images created with the sentance (https://create.microsoft.com/en-us/features/ai-image-generator): 
+
+"a creative palindrome with dreams in the stars who finds its way with a secret question "Rolling Stone". The person knows the destination through submitting their first and last name with their zip code because the secret question is a secret image that appears in a portal"
+        
+the body targets before the body element given the background image is displayed. It's fixed so the background does not scroll with the page. The top and LEft edges align with the web browsing display page where the image covers all of the background space 100% with the width and height. The image obviously does not repeat and the position is Centered. Sometimes there is a better position other than a centered image given the size. But the Opacity is part of the Transparency given the thought of the user and how visual the image might be on the website. 
+      
+      */
+      
         body::before {
             content: '';
             position: fixed;
@@ -66,47 +87,83 @@ The fun part about writing notes in an inline HTML file is seeing the chnage in 
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://raw.githubusercontent.com/hashthat/UAT_CS-AI/main/Materials/screenshots/Designer(5).jpeg'); /* My AI-Generated Image */
+            background-image: url('https://raw.githubusercontent.com/hashthat/UAT_CS-AI/main/Materials/screenshots/Designer(18).jpeg'); /* My AI-Generated Image */
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.7;
+            opacity: 0.8;
             z-index: -1;
         }
+      label {
+        display: block;
+        margin-top: 10px;
+      }
     </style>
 </head>
 <body>
     <!-- This is the box the person sees in the center of the website! The results will be printed as part of the function. Keeping things simple for a basic white background so things can be legible! The button is there for the user to click and interact with the website. But also to check and see if their sentance is a Palindrome. -->
     <div class="container">
-        <h1>Is this a Palindrome?!</h1>
-        <button class="prompt-button" onclick="checkPalindrome()">Click to Enter!</button>
+        <h1 class="heading-background">Enter your Information to Reveal a Secret Message!</h1>
+        <!-- first and last name placeholders -->
+        <input type="text" id="firstName" placeholder="First Name">
+        <input type="text" id="lastName" placeholder="Last Name">
+        <!-- Input field for the users zip code -->
+        <input type="number" id="zipCode" placeholder="Zip Code">
+        <button class="prompt-button" onclick="checkPalindrome()">Submit!</button>
         <div class="results" id="results"></div>
     </div>
 
     <script>
-	    // The fun part about note taking with inline javascript is the comments are in the syntax of what someone would use as they scripted in JavaScript!
-
         // This function will go through the hoops to see if this is a palindrome. The inline aspect of using JavaScript in HTML is effectively adding functions to the script section of the webpage!
-        function checkPalindrome() {
+        
             // Loop to continue asking until the user says to stop. This way there can be multiple inputs!
             // this is the loop that creates the process of checking the palindrome. What is actually happening is the user is typing in a "string" of characters "while" the input is being looped for multiple inputs. The User can type in as many strings as they like. What happens when a string is typed?! the input is typed and the user hits the button to move into a sequence or process of loops.
+        function cleanInput(userInput) {
+            let characters = userInput.split('');
+            let filteredCharacters = characters.filter(char => char !== ' ').map(char => char.toLowerCase());
+            let cleanedInput = filteredCharacters.join('');
+            return cleanedInput;
+        }
+
+        // Function to check if a string is a palindrome
+        function isPalindrome(str) {
+            const cleanedStr = cleanInput(str);
+            const reversedStr = cleanedStr.split('').reverse().join('');
+            return cleanedStr === reversedStr;
+        }
+
+        // Function to check if the user input is a palindrome. In this case it is using the user input of their name and zip code.
+        function validateAndCheck() {
+            // Get user inputs
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const zipCode = document.getElementById('zipCode').value;
+            const fullName = firstName + ' ' + lastName; // concatonates with simple operators vs using .concat as part of the function.
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = ''; // Clear previous results, that way new users can be created. In this case the memory is not stored. That would be for another day.
+
+            // Validate full name and make sure the concatonation is 20 characters or less.
+            if (fullName.length > 20) {
+                alert("Full name must be 20 characters or less.");
+                return;
+            }
+
+            // Validate zip code length and digits
+            
+            if (zipCode.length !== 5 || !/^\d{5}$/.test(zipCode)) {
+                alert("Zip code must be exactly 5 digits.");
+                // The length of the digits (d) would be 5 and the dollar sign states that this would be the end of the entry. There must be 5 digits, from !/^\ start to end!
+                return;
+            }
+
+            // Prompt user to enter a string for palindrome check
             while (true) {
-                // This is the initial prompt for the user. This way they know what to do!
-                let userInput = prompt("Enter a string (or click Cancel to stop):");
+                let userInput = prompt("Enter a string to check for palindrome (or click Cancel to stop):");
                 if (userInput === null) break;
+
+                let isPalin = isPalindrome(userInput);
+                let message = `"${userInput}" is ${isPalin ? '' : 'not '}a palindrome.`;
                 
-                // The process can start with either the toLowerCase or toUpperCase function.
-                let cleanedInput = userInput.replace(/\s+/g, '').toLowerCase();
-                // the reversed input checks to see if the input is a palindrome. Technically that is just checking if the array matches from the center out. So, this is where the string turns into an array
-                let reversedInput = cleanedInput.split('').reverse().join('');
-                
-                // is this a Palindrome?!
-                let isPalindrome = cleanedInput === reversedInput;
-                // Notify the user if the string is a palindrome or not
-                let message = `"${userInput}" is ${isPalindrome ? '' : 'not '}a palindrome.`;
-                
-                // Results
-                let resultsDiv = document.getElementById('results');
                 let resultParagraph = document.createElement('p');
                 resultParagraph.textContent = message;
                 resultsDiv.appendChild(resultParagraph);
@@ -115,8 +172,4 @@ The fun part about writing notes in an inline HTML file is seeing the chnage in 
     </script>
 </body>
 </html>
-<!-- This is a Review of the looping process of what creates a palindrome checker!
-	========================================================================
-	There are a few key functions to develop a palindrome checker. Before checking for the palendrome in a word or string of characters (the input of the user) There has to be a way to identify whether or not the characters match and the word is spelled the same forwards and backwards before it is split into an array and checked. So, there's the old C like function that changes a string to all upper or lowercase characters. That's where the madness can start. Making all the characters toupper or tolower case and then checking the values to the array or string. The first being the idea of a butterfly effect. That is with the use of a split() function which splits the string entered or the input string gets transferred into an array of characters that can be used with the reverse() function to see if the palendrom is read forwards or backwards. The other function does the reverse of what was done with the split() function. The join() function reconnects the array of characters and the input is converted back to a string of characters which is then returned as the output of the process.
--->
 
